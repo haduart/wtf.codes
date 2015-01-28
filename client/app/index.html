@@ -21,9 +21,12 @@
         href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app='app'>
+<body ng-app='app'
+      layout="row">
 
-<div ui-view="main">
+<div ui-view="main"
+     layout='column'
+     layout-fill>
 </div>
 
 <!-- build:js(.) scripts/vendor.js -->

@@ -6,7 +6,7 @@ angular.module('app', ['ui.router',
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('app', {
-    url: '/',
+    url: '/:language',
     views: {
       'main': {
         templateUrl: 'views/main.html',

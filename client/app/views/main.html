@@ -1,27 +1,33 @@
-<md-content>
-  <md-toolbar>
-    <h1 class="md-toolbar-tools">
-      <span flex>WTF.codes</span>
-      <md-button class="md-raised md-warn">Publish wtf code</md-button>
-    </h1>
-  </md-toolbar>
-  <div layout="row"
-       layout-align="space-around start">
-    <h3 ng-repeat="language in languages"> {{language.name + ' (' + language.count +')'}}</h3>
-  </div>
+<md-toolbar>
+  <h1 class="md-toolbar-tools">
+    <span flex>WTF.codes</span>
+    <md-button class="md-raised md-warn">Publish wtf code</md-button>
+  </h1>
+</md-toolbar>
 
-  <md-content>
 
+<div layout="row">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+              md-component-id="left"
+              md-is-locked-open="true">
+
+    <md-button md-no-ink
+               ng-repeat="language in languages"
+               class="md-primary">{{language.name + ' (' + language.count +')'}}
+    </md-button>
+
+  </md-sidenav>
+  <md-content flex>
     <md-card ng-repeat="code in codes">
       <md-card-content>
         <div class="md-tile-content md-padding">
           <div layout="row"
                layout-align="space-between start">
             <h3>{{code.language + " #" + code.id}}</h3>
-            <span>
-            {{code.rating}}
-            <md-button class="md-raised">Rate</md-button>
-            </span>
+    <span>
+    {{code.rating}}
+    <md-button class="md-raised">Rate</md-button>
+    </span>
           </div>
 
           <br/>
@@ -43,7 +49,5 @@
 
       </md-card-content>
     </md-card>
-
   </md-content>
-
-</md-content>
+</div>
