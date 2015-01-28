@@ -1,16 +1,48 @@
 <md-content>
   <md-toolbar>
-    <div class="md-toolbar-tools">
-      <h2>WTF.codes check crappy code here</h2>
-    </div>
+    <h1 class="md-toolbar-tools">
+      <span flex>WTF.codes</span>
+      <md-button class="md-raised md-warn">Publish wtf code</md-button>
+    </h1>
   </md-toolbar>
-  <br>
-  <br>
+  <div layout="row"
+       layout-align="space-around start">
+    <h3 ng-repeat="language in languages"> {{language.name + ' (' + language.count +')'}}</h3>
+  </div>
+
   <md-content>
-    <div layout="row"
-         layout-align="space-around start">
-      <h3 ng-repeat="language in languages"> {{language.name + ' (' + language.count +')'}}</h3>
-    </div>
+
+    <md-card ng-repeat="code in codes">
+      <md-card-content>
+        <div class="md-tile-content md-padding">
+          <div layout="row"
+               layout-align="space-between start">
+            <h3>{{code.language + " #" + code.id}}</h3>
+            <span>
+            {{code.rating}}
+            <md-button class="md-raised">Rate</md-button>
+            </span>
+          </div>
+
+          <br/>
+
+          <pre class="prettyprint lang-js">{{code.code}} </pre>
+          <br/>
+
+          <h3>{{code.description}}</h3>
+          <br/>
+
+          <div layout="row"
+               layout-align="space-between start">
+
+            <md-button>Comments (0)</md-button>
+            <md-button class="md-raised">Share</md-button>
+          </div>
+          <br/>
+        </div>
+
+      </md-card-content>
+    </md-card>
 
   </md-content>
 
