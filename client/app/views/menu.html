@@ -1,0 +1,11 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            md-is-locked-open="true">
+
+    <md-button md-no-ink
+               ng-repeat="language in languages"
+               ui-sref="app.language({language:language.name})"
+               class="md-primary">{{language.name + ' (' + language.count +')'}}
+    </md-button>
+
+</md-sidenav>
