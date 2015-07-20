@@ -1,3 +1,16 @@
 body {
-  overflow: auto;
+  //  overflow: auto;
+  //  height: 100%;
+}
+
+.header {
+  height: 100px;
+}
+
+.main {
+  overflow-y: auto;
+}
+
+.left-sidenav {
+  height: 100%;
 }

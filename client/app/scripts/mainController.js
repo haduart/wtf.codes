@@ -1,9 +1,5 @@
 'use strict';
-angular.module('app').controller('mainController', function ($scope) {
-  $scope.languages = [{name: 'ActionScript', count: 48}, {name: 'JavaScript', count: 234}, {
-    name: 'Clojure',
-    count: 12
-  }];
+angular.module('app').controller('mainController', function($scope, $stateParams) {
 
   $scope.codes = [
     {
@@ -33,6 +29,20 @@ angular.module('app').controller('mainController', function ($scope) {
       date: new Date().getMilliseconds(),
       comments: [],
       rating: -5
+    }, {
+      language: 'ActionScript',
+      id: 4,
+      code: '<div>foo3</div>',
+      description: 'Someone did it',
+      creator: 'dmoskovsov',
+      date: new Date().getMilliseconds(),
+      comments: [],
+      rating: -5
     }
   ];
+
+  $scope.codes = _.filter($scope.codes, function(code) {
+    return $stateParams.language === "All" || code.language === $stateParams.language;
+  });
+
 });
